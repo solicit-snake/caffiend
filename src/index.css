@@ -257,6 +257,12 @@ footer {
   gap: 1rem;
 }
 
+.auth-error{
+  color: #ff4040;
+  font-size: 12px;
+  font-family: monospace;
+}
+
 
 
 
