@@ -11,6 +11,10 @@ export default function Layout(props) {
     
     const {globalUser, logout} = useAuth();
 
+    function handleCloseModal(){
+        setShowModal(false)
+    }
+
     const header = (
         <header>
             <div>
@@ -23,7 +27,7 @@ export default function Layout(props) {
                 </button>) 
                 :
                 (<button onClick={(() => {setShowModal(true)})}>
-                    <p>Sign up free</p>
+                    <p>Sign up / Log in</p>
                     <i className="fa-solid fa-mug-hot"></i>
                 </button> )
             }
@@ -42,8 +46,8 @@ export default function Layout(props) {
     return (
         <>
             {showModal && (
-                <Modal handleCloseModal={(() => setShowModal(false))}>
-                    <Authentication handleCloseModal={(() => setShowModal(false))}/>
+                <Modal handleCloseModal={handleCloseModal}>
+                    <Authentication handleCloseModal={handleCloseModal}/>
                 </Modal>
             )}
             {header}

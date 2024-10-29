@@ -45,14 +45,11 @@ export default function Authentication(props) {
         //login a user
         await login(email, password)
       }
+      handleCloseModal()
     } catch (error) {
-      console.log(error.message)
       handleAuthError(error.message)
     } finally {
       setIsAuthenticating(false)
-      if(globalUser) {
-        handleCloseModal()
-      }
     }
   }
 
